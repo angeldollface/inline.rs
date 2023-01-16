@@ -9,10 +9,12 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-      - uses: actions-rs/cargo@v1
+      - name: "Test build"
+        uses: actions-rs/cargo@v1
         with:
           command: build
           args: --release
-      - uses: actions-rs/cargo@v1
+      - name: "Running tests."
+        uses: actions-rs/cargo@v1
         with:
           command: run

@@ -9,6 +9,14 @@ homepage = "https://github.com/angeldollface/inline.rs"
 repository = "https://github.com/angeldollface/inline.rs"
 documentation = "https://github.com/angeldollface/inline.rs"
 readme = "README.markdown"
-keywords = ["css", "styling"]
-categories = ["css", "styling"]
-exclude = ["/.github"]
+keywords = [
+    "css",
+    "styling"
+]
+categories = [
+    "css", 
+    "styling"
+]
+exclude = [
+    "/.github"
+]
