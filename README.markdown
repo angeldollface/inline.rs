@@ -167,7 +167,7 @@ git clone https://github.com/angeldollface/inline.rs.git
 cd inline.rs/example
 ```
 
-- 4.) Serve the app locally (This will serve the app locally on [`http://127.0.0.1:8080/inline-rs/`](http://127.0.0.1:8080/inline-rs/).):
+- 4.) Serve the app locally (This will serve the app locally on [`http://127.0.0.1:8080/inline.rs/`](http://127.0.0.1:8080/inline.rs/).):
 
 ```bash
 trunk --config trunk.toml serve --release
