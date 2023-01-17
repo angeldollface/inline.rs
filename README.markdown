@@ -32,7 +32,11 @@ To refer to *Inline.rs*'s detailed API, please click [here](https://github.com/a
 To style something using *Inline.rs* you would write the following:
 
 ```Rust
+// Imports "Inline.rs".
 use inline_rs::Style;
+
+// Imports "HashMap".
+use std::collections::HashMap;
 
 fn main(){
     // Defining one variable for no padding and no margin.
