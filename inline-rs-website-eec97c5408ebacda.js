@@ -622,7 +622,7 @@ function initSync(module) {
 
 async function init(input) {
     if (typeof input === 'undefined') {
-        input = new URL('inlone-rs-test-8fc36ccd76cbb1e6_bg.wasm', import.meta.url);
+        input = new URL('inline-rs-website-eec97c5408ebacda_bg.wasm', import.meta.url);
     }
     const imports = getImports();
 
