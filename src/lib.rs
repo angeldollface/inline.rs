@@ -19,10 +19,10 @@ pub struct Style {
 impl Style {
 
     // Function to create a new "instance" of the struct.
-    pub fn new(name: String, attributes: HashMap<String, &str>) -> Style {
+    pub fn new(name: String, attributes: HashMap<&str, &str>) -> Style {
         let mut hash_result: HashMap<String, String> = HashMap::new();
         for (key, value) in attributes {
-            hash_result.insert(key, value.to_owned());
+            hash_result.insert(key.to_owned(), value.to_owned());
         }
         return Style {
             name: name,
@@ -75,10 +75,10 @@ pub fn test(){
         String::from("p"),
         HashMap::from(
             [
-                ("text-align".to_string(), "center"),
-                ("font-size".to_string(),  &my_std_font_size),
-                ("padding".to_string(), &my_fancy_padding),
-                ("margin".to_string(), &my_fancy_padding)
+                ("text-align", "center"),
+                ("font-size",  &my_std_font_size),
+                ("padding", &my_fancy_padding),
+                ("margin", &my_fancy_padding)
             ]
         )
     );

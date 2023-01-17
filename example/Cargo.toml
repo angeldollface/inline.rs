@@ -1,0 +1,19 @@
+[package]
+name = "inlone-rs-test"
+version = "1.0.0"
+edition = "2021"
+license = "MIT"
+authors = ["Angel Dollface"]
+description= "A test Yew app for Inline.rs."
+homepage = "https://github.com/angeldollface/inline.rs"
+repository = "https://github.com/angeldollface/inline.rs"
+documentation = "https://github.com/angeldollface/inline.rs"
+readme = "README.markdown"
+keywords = ["web-app"]
+categories = ["web-app"]
+exclude = ["/.github"]
+
+[dependencies]
+wasm-bindgen = "0.2.83"
+yew = { version = "0.20.0", features = ["csr"] }
+inline-rs = { path = "../" }

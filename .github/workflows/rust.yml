@@ -18,3 +18,18 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: run
+      - name: "Compiling and deploying the example."
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: wasm32-unknown-unknown
+      - uses: jetli/trunk-action@v0.1.0
+      - uses: jetli/wasm-bindgen-action@v0.1.0
+      - uses: actions/checkout@v2
+      - name: "Compiling Yew application."
+        run: cd example && trunk --config trunk.toml build --release
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages
+          folder: example/dist

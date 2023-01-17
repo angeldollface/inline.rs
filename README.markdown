@@ -27,11 +27,16 @@ use inline_rs::Style;
 
 To refer to *Inline.rs*'s detailed API, please click [here](https://github.com/angeldollface/inline.rs/blob/main/src/lib.rs).
 
-### EXAMPLE
+### EXAMPLES
 
 To style something using *Inline.rs* you would write the following:
 
 ```Rust
+/*
+INLINE.RS by Alexander Abraham a.k.a. "Angel Dollface".
+Licensed under the MIT license.
+*/
+
 // Imports "Inline.rs".
 use inline_rs::Style;
 
@@ -83,12 +88,111 @@ p {
 }
 ```
 
+To use *Inline.rs* with Yew, here's a small example:
+
+```Rust
+/*
+INLINE.RS by Alexander Abraham a.k.a. "Angel Dollface".
+Licensed under the MIT license.
+*/
+
+// Importing Yew's APIs.
+use yew::prelude::*;
+
+// Importing Inline.rs.
+use inline_rs::Style;
+
+// Importing the "HashMap" implementation
+// from the standard library.
+use std::collections::HashMap;
+
+// Main app component.
+#[function_component]
+pub fn App() -> Html {
+
+    // Styles for a paragraph.
+    let paragraph_style: Style = Style::new(
+        String::from("p"),
+        HashMap::from(
+            [
+                ("margin-right", "0px"),
+                ("margin-left", "0px"),
+                ("text-align", "left"),
+                ("margin-top", "20px"),
+                ("margin-bottom", "20px"),
+                ("padding", "0px"),
+                ("font-size", "25px"),
+                ("color", "#00000"),
+                ("font-family", "FiraCode-Regular")
+            ]
+        )
+    );
+
+    // Returning the paragraph element.
+    return html!{
+        <>
+         <p style={paragraph_style.to_css()}>{"Whatever."}</p>
+        </>
+    };
+}
+
+// Main entry point for 
+// the Rust compiler.
+fn main() {
+
+    // We render the app.
+    yew::Renderer::<App>::new().render();
+}
+```
+
+To view a more elaborate example, click [here](example/src/main.rs).
+
+To try the more elaborate example on your own machine, follow these steps:
+
+- 1.) Install `trunk` from [crates.io](https://crates.io/crates/trunk):
+
+```bash
+cargo install trunk
+```
+
+- 2.) Clone this project's source code:
+
+```bash
+git clone https://github.com/angeldollface/inline.rs.git
+```
+
+- 3.) Change directory into the source code's root directory:
+
+```bash
+cd inline.rs/example
+```
+
+- 4.) Serve the app locally (This will serve the app locally on [`http://127.0.0.1:8080/inline-rs/`](http://127.0.0.1:8080/inline-rs/).):
+
+```bash
+trunk --config trunk.toml serve --release
+```
+
+- 5.) If you want to build the app into a bundle to deploy to a server, run the command below. This will produce a directory called `dist` with the bundle inside it.
+
+```bash
+trunk --config trunk.toml build --release
+```
+
+- 5.) Enjoy! :heart_on_fire:
+
 ## CHANGELOG
 
 ### Version 1.0.0
 
 - Initial release.
 - Upload to GitHub.
+
+### Version 1.1.0
+
+- Added an example.
+- Updated documentation.
+- Changed paramater types for the `new` function.
 
 ## NOTE
 
