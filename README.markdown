@@ -16,7 +16,7 @@ To use *Inline.rs* in your projects, add this to your `Cargo.toml`:
 
 ```TOML
 [dependencies]
-inline-rs = { git = "https://github.com/angeldollface/inline-rs", version = "1.0.0" }
+inline-rs = { git = "https://github.com/angeldollface/inline-rs",branch = "main" }
 ```
 
 To import *Inline.rs*'s API, put this line of code inside your Rust code:
